@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Second Chance Shelter about adoption, volunteering, jobs or donations.">
+  <title>Second Chance Shelter - Contact</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <h1>Second Chance Shelter</h1>
+    <p class="site-tagline">An animal shelter where everyone gets a fresh start</p>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="animals.html">Animals</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section>
+      <h2>Contact us</h2>
+
+      <p>Ask about adoption, volunteering or jobs, or leave feedback. We will reply as soon as possible.</p>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h3>Contact details</h3>
+
+          <p>
+            Eläinkatu 1<br>
+            00100 Helsinki
+          </p>
+
+          <p>
+            Phone:
+            <a href="tel:+358401234567">+358 40 123 4567</a>
+          </p>
+
+          <p>
+            Email:
+            <a href="mailto:secondchanceshelter@gmail.com">
+              secondchanceshelter@gmail.com
+            </a>
+          </p>
+
+          <h3>Opening hours</h3>
+
+          <p>
+            Mon - Fri: 10:00 - 17:00<br>
+            Sat - Sun: by appointment
+          </p>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="First name Last name"
+              autocomplete="name"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              autocomplete="email"
+              required>
+          </div>
+
+          <fieldset class="address-group">
+            <legend>Address</legend>
+
+            <div class="form-group">
+              <label for="street">Street address:</label>
+              <input
+                type="text"
+                id="street"
+                name="street"
+                placeholder="Example Street 1 A 2"
+                autocomplete="street-address"
+                required>
+            </div>
+
+            <div class="form-row">
+
+              <div class="form-group small">
+                <label for="postcode">Postal code:</label>
+                <input
+                  type="text"
+                  id="postcode"
+                  name="postcode"
+                  placeholder="00100"
+                  inputmode="numeric"
+                  pattern="[0-9]{5}"
+                  maxlength="5"
+                  title="Enter a five-digit postal code"
+                  autocomplete="postal-code"
+                  required>
+              </div>
+
+              <div class="form-group large">
+                <label for="city">City:</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Helsinki"
+                  autocomplete="address-level2"
+                  required>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="topic">Topic:</label>
+
+            <select id="topic" name="topic" required>
+              <option value="adoption">Adoption</option>
+              <option value="volunteering">Volunteering</option>
+              <option value="job">Job application</option>
+              <option value="donation">Donation</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required></textarea>
+          </div>
+
+          <p class="form-note">
+            Please note: the form layout is ready, but a server-side form handler must be connected before messages can be delivered.
+          </p>
+
+          <button type="submit" class="btn">Send message</button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Second Chance Shelter</p>
+  </footer>
+
+</body>
+</html>
+
+
+6. css/style.css
+Tämä on yhteinen CSS-tiedosto kaikille viidelle sivulle. Korvaa nykyinen CSS tällä.
+/* Second Chance Shelter - shared styles */
+
+:root {
+  --color-green-dark: #1f3d2b;
+  --color-green: #1f6b45;
+  --color-green-light: #eaf3ec;
+  --color-green-pale: #f3f6f1;
+  --color-orange: #c2571a;
+  --color-text: #26332b;
+  --color-muted: #5a6b60;
+  --color-border: #d5e2d9;
+  --color-white: #ffffff;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* GENERAL SETTINGS */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-green-pale);
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--color-green);
+}
+
+/* ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  color: var(--color-white);
+  background: var(--color-green-dark);
+  border-radius: 6px;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* HEADER AND NAVIGATION */
+
+.site-header {
+  padding: 2rem 1.25rem;
+  color: var(--color-white);
+  text-align: center;
+  background: var(--color-green-dark);
+}
+
+.site-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: 0.04em;
+}
+
+.site-tagline {
+  margin-bottom: 1.4rem;
+  color: #d8e8dc;
+  font-style: italic;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  color: var(--color-white);
+  font-weight: 700;
+  text-decoration: none;
+  background: #3f7a58;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover {
+  background: var(--color-orange);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-green-dark);
+  background: var(--color-white);
+}
+
+/* MAIN CONTENT */
+
+main {
+  flex: 1;
+  width: min(100% - 2rem, 1000px);
+  margin: 2rem auto;
+}
+
+section {
+  margin-bottom: 1.5rem;
+  padding: clamp(1.2rem, 3vw, 1.7rem);
+  background: var(--color-white);
+  border: 1px solid rgba(213, 226, 217, 0.65);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  color: var(--color-green-dark);
+  border-bottom: 2px solid #cfe0d4;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+}
+
+h3 {
+  margin: 0 0 0.45rem;
+  color: var(--color-green-dark);
+}
+
+/* FLEXIBLE CONTENT LAYOUTS */
+
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.intro > img,
+.intro-text {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.intro > img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* GRID LAYOUT */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 240px), 1fr)
+  );
+  gap: 1.2rem;
+}
+
+/* CARDS */
+
+.card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
+}
+
+.card > img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.1rem;
+}
+
+.card-body > :last-child {
+  margin-bottom: 0;
+}
+
+.meta {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* BADGES */
+
+.badge {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 1;
+  padding: 0.2rem 0.75rem;
+  color: var(--color-white);
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--color-orange);
+  border-radius: 999px;
+}
+
+/* STATISTICS */
+
+.stat {
+  padding: 1.2rem;
+  text-align: center;
+  background: var(--color-green-light);
+  border-radius: 8px;
+}
+
+.stat .number {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--color-green);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat p {
+  margin: 0;
+}
+
+/* JOB INFORMATION */
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.6rem 0 0.9rem;
+  padding: 0;
+  list-style: none;
+}
+
+.job-meta li {
+  padding: 0.15rem 0.65rem;
+  color: var(--color-green-dark);
+  font-size: 0.84rem;
+  background: var(--color-green-light);
+  border-radius: 999px;
+}
+
+/* DONATIONS */
+
+.amount {
+  display: block;
+  color: var(--color-green);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.donation-card {
+  text-align: center;
+}
+
+.list {
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  margin-top: 0.45rem;
+  padding: 0.65rem 1.1rem;
+  color: var(--color-white);
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  background: var(--color-green);
+  border: 2px solid var(--color-green);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  color: var(--color-white);
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.btn.secondary {
+  color: var(--color-green);
+  background: var(--color-white);
+}
+
+.btn.secondary:hover {
+  color: var(--color-white);
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+/* CONTACT PAGE */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  margin-top: 1.25rem;
+}
+
+.contact-info h3:not(:first-child) {
+  margin-top: 1.25rem;
+}
+
+/* CONTACT FORM */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  color: var(--color-green-dark);
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem;
+  color: var(--color-text);
+  font: inherit;
+  background: var(--color-white);
+  border: 1px solid #aebfb3;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* ADDRESS FIELDS */
+
+.address-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid #aebfb3;
+  border-radius: 7px;
+}
+
+.address-group legend {
+  padding: 0 0.45rem;
+  color: var(--color-green-dark);
+  font-weight: 700;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-group.small {
+  flex: 1 1 110px;
+}
+
+.form-group.large {
+  flex: 2 1 180px;
+}
+
+.form-note {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+
+.site-footer {
+  margin-top: auto;
+  padding: 1.25rem;
+  color: #4a5d51;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+
+  .site-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .site-nav a {
+    display: block;
+  }
+
+  main {
+    width: min(100% - 1rem, 1000px);
+    margin: 1rem auto;
+  }
+
+  section {
+    padding: 1.1rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+}

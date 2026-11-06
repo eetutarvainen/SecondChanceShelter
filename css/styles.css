@@ -481,4 +481,13 @@ h3 {
     animation-iteration-count: 1 !important;
   }
 
+  .animal-jump-links {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.animal-section {
+  scroll-margin-top: 25px;
+}
+
 }

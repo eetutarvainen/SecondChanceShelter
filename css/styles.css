@@ -209,7 +209,6 @@ section p {
   background-color: #e4f0e7;
 }
 
-/* GRID LAYOUT */
 
 .grid {
   display: grid;
@@ -217,7 +216,6 @@ section p {
   gap: 20px;
 }
 
-/* CARDS */
 
 .card {
   position: relative;
@@ -263,7 +261,6 @@ section p {
   font-weight: bold;
 }
 
-/* BADGES */
 
 .badge {
   position: absolute;
@@ -278,7 +275,6 @@ section p {
   font-weight: bold;
 }
 
-/* STATISTICS */
 
 .stat {
   background-color: #eaf3eb;
@@ -300,7 +296,6 @@ section p {
   font-weight: bold;
 }
 
-/* ANIMALS PAGE */
 
 .animal-jump-links {
   display: flex;
@@ -317,7 +312,6 @@ section p {
   margin-bottom: 20px;
 }
 
-/* VIDEO */
 
 video {
   display: block;
@@ -340,7 +334,6 @@ section li {
   margin-bottom: 8px;
 }
 
-/* FORMS */
 
 form {
   width: 100%;
@@ -396,7 +389,6 @@ form button {
   margin: 0;
 }
 
-/* RESPONSIVE DESIGN - TABLETS */
 
 @media (max-width: 850px) {
 
@@ -414,7 +406,6 @@ form button {
 
 }
 
-/* RESPONSIVE DESIGN - MOBILE */
 
 @media (max-width: 600px) {
 

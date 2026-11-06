@@ -487,4 +487,23 @@ form button {
     font-size: 1.9rem;
   }
 
+  
+/* JOB CARDS */
+
+.card:has(.badge) .badge {
+  position: static;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.card:has(.badge) .card-body {
+  padding-top: 5px;
+}
+
+.job-meta {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+
 }

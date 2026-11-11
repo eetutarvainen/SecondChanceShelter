@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,16 +29,16 @@
             An animal shelter where everyone gets a fresh start
         </p>
 
-       <nav class="site-nav" aria-label="Main navigation">
-      <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="adoption.html">Adoption Process</a></li>
-            <li><a href="animals.html">Animals</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
-      </ul>
-   </nav>
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adoption.html">Adoption Process</a></li>
+                <li><a href="animals.html">Animals</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
 
     </header>
 
@@ -63,46 +64,27 @@
                     <div class="form-group">
                         <label for="name">Full Name</label>
 
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your name"
-                            autocomplete="name"
+                        <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name"
                             required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email"
-                            autocomplete="email"
+                        <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email"
                             required>
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Subject</label>
 
-                        <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            placeholder="Message subject"
-                            required>
+                        <input type="text" id="subject" name="subject" placeholder="Message subject" required>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Your Message</label>
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            placeholder="Write your message here..."
+                        <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
                             required></textarea>
                     </div>
 
@@ -110,12 +92,7 @@
                         Send Message
                     </button>
 
-                    <p
-                        id="formStatus"
-                        class="form-status"
-                        role="status"
-                        aria-live="polite"
-                        hidden>
+                    <p id="formStatus" class="form-status" role="status" aria-live="polite" hidden>
                     </p>
 
                 </form>
@@ -128,7 +105,7 @@
 
                 <p>
                     <strong>Address:</strong><br>
-                    Helsinki City Centre, Finland
+                    Example Street 1, 00100 Helsinki
                 </p>
 
                 <p>
@@ -155,31 +132,42 @@
 
         </div>
 
+        <section id="found-animal">
+
+            <h2>Found a Homeless Animal?</h2>
+
+            <ol>
+                <li>Check whether the animal has a collar or an ID tag.</li>
+                <li>Take a photo of the animal and write down where and when you found it.</li>
+                <li>Call us at <a href="tel:+358401234567">+358 40 123 4567</a>. Phone is the fastest way to reach us.
+                </li>
+                <li>If you cannot call, send us a message through the contact form above.</li>
+            </ol>
+
+        </section>
+
         <section class="map-section">
 
             <h2>Find Us in Helsinki</h2>
 
             <p>
-                Our example location is in the centre of Helsinki.
+                Second Chance Shelter and its address are fictional,
+                so the map shows an example location in the centre of Helsinki.
             </p>
 
             <div class="map-container">
 
                 <iframe
                     src="https://maps.google.com/maps?q=Helsinki%20Central%20Railway%20Station&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                    title="Map showing Helsinki city centre"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Map showing Helsinki city centre" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     allowfullscreen>
                 </iframe>
 
             </div>
 
             <p>
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=Helsinki+Central+Railway+Station"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                <a href="https://www.google.com/maps/search/?api=1&query=Helsinki+Central+Railway+Station"
+                    target="_blank" rel="noopener noreferrer">
                     Open location in Google Maps
                 </a>
             </p>
@@ -188,12 +176,34 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
+
+        <p><strong>Second Chance Shelter</strong></p>
+
+        <p>Example Street 1, 00100 Helsinki</p>
+
+        <p>
+            Phone: <a href="tel:+358401234567">+358 40 123 4567</a> ·
+            Email: <a href="mailto:info@secondchanceshelter.com">info@secondchanceshelter.com</a>
+        </p>
+
+        <p>Opening hours: Monday–Friday 9:00–17:00, weekends by appointment</p>
+
+        <!-- TODO: uncomment when info.html is ready (SCS-36, SCS-37)
+    <p>
+      <a href="info.html#privacy">Privacy policy</a> ·
+      <a href="info.html#accessibility">Accessibility statement</a>
+    </p>
+    -->
+
         <p>
             &copy; 2026 Second Chance Shelter.
             All rights reserved.
         </p>
+
     </footer>
 
 </body>
+
 </html>

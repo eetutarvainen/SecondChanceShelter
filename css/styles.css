@@ -1,16 +1,30 @@
 
-/* ========================================
+/* =========================================
    SECOND CHANCE SHELTER
-   Main stylesheet
-======================================== */
+   Desktop-first responsive stylesheet
+   Breakpoints: 1280px and 768px
+========================================= */
 
 
-/* GENERAL SETTINGS */
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --primary-color: #315b4c;
+  --secondary-color: #e8f0eb;
+  --accent-color: #d99b52;
+  --background-color: #f8f8f4;
+  --text-color: #292f2c;
+  --white: #ffffff;
+  --border-color: #dddddd;
+  --max-width: 1200px;
 }
 
 html {
@@ -19,25 +33,19 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f3f6f2;
-  color: #26352d;
   line-height: 1.6;
-  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 img {
-  display: block;
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 a {
-  color: #176b45;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  color: var(--primary-color);
 }
 
 button,
@@ -48,17 +56,19 @@ select {
 }
 
 
-/* ACCESSIBILITY */
+/* =========================================
+   2. ACCESSIBILITY
+========================================= */
 
 .skip-link {
   position: absolute;
   top: -100px;
   left: 10px;
-  background-color: #176b45;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   padding: 10px 15px;
-  border-radius: 5px;
   z-index: 1000;
+  text-decoration: none;
 }
 
 .skip-link:focus {
@@ -66,354 +76,201 @@ select {
 }
 
 
-/* HEADER */
+/* =========================================
+   3. HEADER AND NAVIGATION
+========================================= */
 
-.site-header {
-  background-color: #ffffff;
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 25px 40px;
   text-align: center;
-  padding: 30px 20px 20px;
-  border-bottom: 1px solid #dce5dc;
 }
 
-.site-header h1 {
-  color: #176b45;
-  font-size: 2.3rem;
-  margin-bottom: 5px;
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
 }
 
-.site-tagline {
-  color: #68766d;
-  font-size: 1rem;
-  margin-bottom: 22px;
+header p {
+  font-size: 1.05rem;
 }
 
-
-/* NAVIGATION */
+.site-nav {
+  background-color: #244638;
+  padding: 0 20px;
+}
 
 .site-nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 10px;
-  list-style: none;
+  flex-wrap: wrap;
 }
 
 .site-nav a {
   display: block;
-  padding: 10px 16px;
-  color: #304238;
+  color: var(--white);
+  text-decoration: none;
+  padding: 15px 18px;
   font-weight: bold;
-  border-radius: 6px;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s ease;
 }
 
-.site-nav a:hover {
-  background-color: #e4f0e7;
-  color: #176b45;
-  text-decoration: none;
+.site-nav a:hover,
+.site-nav a:focus {
+  background-color: var(--primary-color);
 }
 
 .site-nav a.active {
-  background-color: #176b45;
-  color: white;
+  background-color: var(--accent-color);
+  color: #222222;
+  border-radius: 4px;
 }
 
 
-/* MAIN CONTENT */
+/* =========================================
+   4. MAIN CONTENT
+========================================= */
 
 main {
-  width: 90%;
-  max-width: 1100px;
-  margin: 30px auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 35px 30px;
 }
 
 section {
-  background-color: #ffffff;
-  padding: 25px;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  border: 1px solid #e0e8e0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin-bottom: 45px;
 }
 
 section h2 {
-  color: #176b45;
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #dce5dc;
-}
-
-section h3 {
-  color: #304238;
-  margin-bottom: 8px;
-}
-
-section p {
-  margin-bottom: 12px;
-}
-
-
-/* INTRO SECTION */
-
-.intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  align-items: center;
-}
-
-.intro img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.intro-text {
-  padding: 10px;
-}
-
-.intro-text p {
+  color: var(--primary-color);
+  font-size: 1.9rem;
   margin-bottom: 18px;
 }
 
-
-/* BUTTONS */
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
+section h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
 }
 
-.btn {
+section p {
+  margin-bottom: 15px;
+}
+
+.intro {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 45px;
+}
+
+.intro h2 {
+  font-size: 2.3rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+}
+
+
+/* =========================================
+   5. BUTTONS AND LINKS
+========================================= */
+
+.button,
+.btn,
+button {
   display: inline-block;
-  background-color: #176b45;
-  color: #ffffff;
-  padding: 11px 18px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
   border-radius: 5px;
-  font-weight: bold;
-  border: 2px solid #176b45;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.btn:hover {
-  background-color: #105536;
-  border-color: #105536;
-  color: #ffffff;
+  padding: 12px 22px;
   text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.btn.secondary {
-  background-color: #ffffff;
-  color: #176b45;
+.button:hover,
+.btn:hover,
+button:hover {
+  background-color: #244638;
 }
 
-.btn.secondary:hover {
-  background-color: #e4f0e7;
+.button:focus,
+.btn:focus,
+button:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
 }
 
 
-/* GRID LAYOUT */
+/* =========================================
+   6. GRID AND CARDS
+========================================= */
 
-.grid {
+.grid,
+.card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
-
-
-/* CARDS */
 
 .card {
-  position: relative;
-  background-color: #ffffff;
-  border: 1px solid #dce5dc;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
-}
-
-.card > img {
+.card img {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
 }
 
 .card-body {
-  padding: 16px;
+  padding: 22px;
 }
 
-.card-body h3 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
-.card-body p {
+.card p {
   margin-bottom: 12px;
 }
 
-.card-body .btn {
-  margin-top: 5px;
-}
-
-.meta {
-  color: #68766d;
-  font-size: 0.9rem;
-  font-weight: bold;
+.card ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
 }
 
 
-/* BADGES */
+/* =========================================
+   7. BADGES
+========================================= */
 
 .badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  background-color: #d9a441;
-  color: #26352d;
-  padding: 5px 11px;
-  border-radius: 5px;
-  font-size: 0.8rem;
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #222222;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: bold;
 }
 
 
-/* STATISTICS */
-
-.stat {
-  background-color: #eaf3eb;
-  text-align: center;
-  padding: 25px 15px;
-  border-radius: 8px;
-}
-
-.number {
-  display: block;
-  color: #176b45;
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.stat p {
-  margin-bottom: 0;
-  font-weight: bold;
-}
-
-
-/* ANIMALS PAGE */
-
-.animal-jump-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 25px 0;
-}
-
-.animal-section {
-  scroll-margin-top: 25px;
-}
-
-.animal-section h2 {
-  margin-bottom: 20px;
-}
-
-
-/* VIDEO */
-
-video {
-  display: block;
-  width: 100%;
-  max-width: 768px;
-  height: auto;
-  margin: 20px auto 0;
-  border-radius: 8px;
-  background-color: #000000;
-}
-
-
-/* LISTS */
-
-section ul,
-section ol {
-  margin: 15px 0 15px 25px;
-}
-
-section li {
-  margin-bottom: 8px;
-}
-
-
-/* FORMS */
-
-form {
-  width: 100%;
-}
-
-form label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: #304238;
-}
-
-form input,
-form textarea,
-form select {
-  display: block;
-  width: 100%;
-  padding: 11px;
-  margin-bottom: 16px;
-  border: 1px solid #cbd8cd;
-  border-radius: 5px;
-  background-color: #ffffff;
-  color: #26352d;
-}
-
-form textarea {
-  min-height: 130px;
-  resize: vertical;
-}
-
-form input:focus,
-form textarea:focus,
-form select:focus {
-  outline: 2px solid #176b45;
-  border-color: #176b45;
-}
-
-form button {
-  cursor: pointer;
-}
-
-
-/* FOOTER */
-
-.site-footer {
-  background-color: #234b37;
-  color: #ffffff;
-  text-align: center;
-  padding: 25px 15px;
-  margin-top: 40px;
-}
-
-.site-footer p {
-  margin: 0;
-}
-
-
-/* JOB CARDS */
+/* =========================================
+   8. JOB CARDS
+   IMPORTANT: Outside all media queries
+========================================= */
 
 .card:has(.badge) .badge {
   position: static;
@@ -422,7 +279,7 @@ form button {
 }
 
 .card:has(.badge) .card-body {
-  padding-top: 5px;
+  padding-top: 18px;
 }
 
 .job-meta {
@@ -430,116 +287,178 @@ form button {
   margin-bottom: 15px;
 }
 
+.job-meta p {
+  margin-bottom: 5px;
+}
 
-/* CONTACT PAGE */
+
+/* =========================================
+   9. STATISTICS
+========================================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stat,
+.stat-card {
+  background-color: var(--secondary-color);
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.stat h3,
+.stat-card h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+
+/* =========================================
+   10. ANIMALS PAGE
+========================================= */
+
+.animal-jump-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0 35px;
+}
+
+.animal-section {
+  scroll-margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+
+/* =========================================
+   11. VIDEO
+========================================= */
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+.video-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   12. LISTS
+========================================= */
+
+section ul {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+section li {
+  margin-bottom: 8px;
+}
+
+
+/* =========================================
+   13. FORMS
+========================================= */
+
+form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--white);
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.send-button {
+  margin-top: 10px;
+}
+
+.form-status {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+
+/* =========================================
+   14. CONTACT PAGE
+========================================= */
 
 .contact-page {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 30px 20px;
 }
 
 .contact-intro {
   text-align: center;
-  margin-bottom: 35px;
-}
-
-.contact-intro h2 {
-  margin-bottom: 10px;
+  max-width: 800px;
+  margin: 0 auto 35px;
 }
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 35px;
-  margin-bottom: 50px;
+  align-items: start;
 }
 
 .contact-form-section,
 .contact-details {
+  background-color: var(--white);
   padding: 25px;
-  border-radius: 10px;
-  background-color: #f5f5f5;
-}
-
-.contact-form-section h2,
-.contact-details h2 {
-  margin-bottom: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 18px;
-}
-
-.form-group label {
-  margin-bottom: 7px;
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font: inherit;
-}
-
-.form-group textarea {
-  resize: vertical;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: 2px solid #397d55;
-  border-color: #397d55;
-}
-
-.send-button {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 5px;
-  background-color: #397d55;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.send-button:hover {
-  background-color: #285c3d;
-}
-
-.form-status {
-  margin-top: 18px;
-  padding: 12px;
-  border-radius: 5px;
-  background-color: #d8f3dc;
-  color: #20552e;
-  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
 }
 
 .contact-details p {
-  margin-bottom: 20px;
-  line-height: 1.7;
-}
-
-.contact-details a {
-  color: #285c3d;
+  margin-bottom: 15px;
 }
 
 .map-section {
-  margin-top: 30px;
-  text-align: center;
+  margin-top: 40px;
 }
 
 .map-container {
   width: 100%;
   height: 400px;
-  margin-top: 20px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .map-container iframe {
@@ -548,120 +467,167 @@ form button {
   border: 0;
 }
 
-.map-section > p:last-child {
-  margin-top: 15px;
+
+/* =========================================
+   15. FOOTER
+========================================= */
+
+footer {
+  background-color: #244638;
+  color: var(--white);
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin-bottom: 5px;
 }
 
 
-/* RESPONSIVE DESIGN - TABLETS */
+/* =========================================
+   16. TABLET RESPONSIVENESS
+   Screens up to 1280px
+========================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 1280px) {
 
-  .grid {
+  main {
+    padding: 30px 25px;
+  }
+
+  .grid,
+  .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .intro {
-    grid-template-columns: 1fr;
+  .contact-layout {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 25px;
   }
 
-  .intro img {
-    height: 280px;
+  header {
+    padding: 22px 25px;
   }
 
+  .site-nav a {
+    padding: 13px 14px;
+  }
 }
 
 
-/* RESPONSIVE DESIGN - MOBILE */
+/* =========================================
+   17. MOBILE RESPONSIVENESS
+   Screens up to 768px
+========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   body {
     font-size: 15px;
   }
 
-  .site-header {
-    padding: 22px 12px;
-  }
-
-  .site-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .site-nav ul {
-    gap: 5px;
-  }
-
-  .site-nav a {
-    padding: 8px 10px;
-    font-size: 0.9rem;
-  }
-
-  main {
-    width: 94%;
-    margin: 18px auto;
-  }
-
-  section {
-    padding: 18px;
-    margin-bottom: 18px;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .intro img {
-    height: 220px;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-
-  .buttons .btn {
-    text-align: center;
-    width: 100%;
-  }
-
-  .animal-jump-links {
-    flex-direction: row;
-  }
-
-  .animal-jump-links .btn {
-    width: auto;
-    flex: 1;
-  }
-
-  .card > img {
-    height: 230px;
-  }
-
-  .number {
-    font-size: 1.9rem;
-  }
-
-}
-
-
-/* CONTACT PAGE - MOBILE */
-
-@media (max-width: 700px) {
-
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .map-container {
-    height: 300px;
-  }
-
-  .contact-page {
+  header {
     padding: 20px 15px;
   }
 
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  .site-nav {
+    padding: 5px 10px;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .site-nav li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .site-nav a {
+    padding: 11px;
+    width: 100%;
+  }
+
+  main {
+    padding: 25px 15px;
+  }
+
+  section {
+    margin-bottom: 35px;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  .intro h2 {
+    font-size: 1.8rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  .grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card img {
+    height: 220px;
+  }
+
+  .card-body {
+    padding: 18px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .animal-jump-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .animal-jump-links a {
+    text-align: center;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-form-section,
+  .contact-details {
+    padding: 18px;
+  }
+
+  .map-container {
+    height: 280px;
+  }
+
+  .button,
+  .btn,
+  button {
+    text-align: center;
+  }
+
+  footer {
+    padding: 20px 15px;
+  }
 }

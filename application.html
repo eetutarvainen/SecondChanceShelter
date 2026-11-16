@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Second Chance Shelter - Adoption application.">
+
+    <title>Second Chance Shelter - Adoption Application</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <script src="js/contact.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <header class="site-header">
+
+        <h1>Second Chance Shelter</h1>
+
+        <p class="site-tagline">
+            An animal shelter where everyone gets a fresh start
+        </p>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adoption.html">Adoption Process</a></li>
+                <li><a href="animals.html">Animals</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main id="main-content" class="contact-page">
+
+        <section class="contact-intro">
+            <h2>Fill in your information for adoption process</h2>
+
+            <p>
+                Give us details regarding your home, pet experience, time for pet care.
+            </p>
+        </section>
+
+        <div class="contact-layout">
+
+            <section class="contact-form-section">
+
+                <h2>Send Us a Message</h2>
+
+                <form id="contactForm" 
+                    action="https://formspree.io/f/xeagadao"
+                    method="POST">
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+
+                        <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+
+                        <input type="email" id="email" name="_replyto" placeholder="Enter your email" autocomplete="email"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+                            autocomplete="tel" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Home Address</label>
+
+                        <input type="text" id="address" name="address" placeholder="Enter your home address"
+                            autocomplete="street-address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="home">Tell about your home</label>
+
+                        <textarea id="home" name="_subject" placeholder="We have a home with fenced backyard. Dog can run there free." 
+                        required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+
+                        <textarea id="message" name="message" rows="6" placeholder="Tell more about your family, do the dog need to be alone long periods daily... why I want to adpt a dog."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="send-button">
+                        Send Message
+                    </button>
+
+                    <p id="formStatus" class="form-status" role="status" aria-live="polite" hidden>
+                    </p>
+
+                </form>
+
+            </section>
+
+            <section class="contact-details">
+
+                <h2>Our Contact Information</h2>
+
+                <p>
+                    <strong>Address:</strong><br>
+                    Example Street 1, 00100 Helsinki
+                </p>
+
+                <p>
+                    <strong>Email:</strong><br>
+                    <a href="mailto:info@secondchanceshelter.com">
+                        info@secondchanceshelter.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong><br>
+                    <a href="tel:+358401234567">
+                        +358 40 123 4567
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Opening Hours:</strong><br>
+                    Monday - Friday: 9:00 - 17:00<br>
+                    Saturday - Sunday: Visits by appointment <br>
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <section class="map-section">
+
+            <h2>Find Us in Helsinki</h2>
+
+            <p>
+                Second Chance Shelter and its address are fictional,
+                so the map shows an example location in the centre of Helsinki.
+            </p>
+
+            <div class="map-container">
+
+                <iframe
+                    src="https://maps.google.com/maps?q=Helsinki%20Central%20Railway%20Station&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    title="Map showing Helsinki city centre" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Helsinki+Central+Railway+Station"
+                    target="_blank" rel="noopener noreferrer">
+                    Open location in Google Maps
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <p><strong>Second Chance Shelter</strong></p>
+
+        <p>Example Street 1, 00100 Helsinki</p>
+
+        <p>
+            Phone: <a href="tel:+358401234567">+358 40 123 4567</a> ·
+            Email: <a href="mailto:info@secondchanceshelter.com">info@secondchanceshelter.com</a>
+        </p>
+
+        <p>Opening hours: Monday–Friday 9:00–17:00, weekends by appointment</p>
+
+        <!-- TODO: uncomment when info.html is ready (SCS-36, SCS-37)
+    <p>
+      <a href="info.html#privacy">Privacy policy</a> ·
+      <a href="info.html#accessibility">Accessibility statement</a>
+    </p>
+    -->
+
+        <p>
+            &copy; 2026 Second Chance Shelter.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

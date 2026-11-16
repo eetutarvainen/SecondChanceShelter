@@ -7,6 +7,9 @@
   <meta name="description" content="Learn how to adopt a dog or cat from Second Chance Shelter.">
   <title>Second Chance Shelter - Adoption Process</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contact.css">
+
+  <script src="js/contact.js" defer></script>
 </head>
 
 <body>
@@ -87,7 +90,7 @@
         <article class="card">
           <div class="card-body">
             <h3>6. Welcome Home!</h3>
-            <p>After a successful trial period, we complete the adoption paperwork and go through the final details. 
+            <p>After a successful trial period, we complete the adoption paperwork and go through the final details.
               Your new family member is now officially part of your family.</p>
           </div>
         </article>
@@ -113,9 +116,78 @@
       <p>Take a look at our available animals and find your new best friend. If you have any questions, our team is
         happy to help.</p>
 
-      <div class="buttons">
-        <a class="btn" href="animals.html">Browse animals</a>
-        <a class="btn secondary" href="contact.html">Contact us</a>
+      <!-- Adoption form -->
+
+      <div class="contact-layout">
+
+        <section class="contact-form-section">
+
+          <h2>Fill out adoption application</h2>
+
+          <form id="contactForm" action="https://formspree.io/f/xeagadao" method="POST">
+
+            <div class="form-group">
+              <label for="name">Full Name</label>
+
+              <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+
+              <input type="email" id="email" name="_replyto" placeholder="Enter your email" autocomplete="email"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Home Address</label>
+
+              <input type="text" id="address" name="address" placeholder="Enter your home address"
+                autocomplete="street-address" required>
+            </div>
+
+            <div class="form-group">
+              <label for="home">Tell about your home</label>
+
+              <textarea id="home" name="_subject"
+                placeholder="We have a home with fenced backyard. Dog can run there free." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message</label>
+
+              <textarea id="message" name="message" rows="6"
+                placeholder="Tell more about your family, do the dog need to be alone long periods daily... why I want to adpt a dog."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="send-button">
+              Send Message
+            </button>
+
+            <p id="formStatus" class="form-status" role="status" aria-live="polite" hidden>
+            </p>
+
+          </form>
+
+        </section>
+
+
+
+<!--
+        <div class="buttons">
+          <a class="btn" href="animals.html">Browse animals</a>
+          <a class="btn secondary" href="contact.html">Contact us</a>
+        </div>
+      -->
+
       </div>
     </section>
 

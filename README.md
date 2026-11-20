@@ -4,6 +4,10 @@ Website for a fictional animal shelter. Software Engineering course project, Gro
 
 Published site: https://eetutarvainen.github.io/SecondChanceShelter/
 
+## Documentation
+
+- [Käyttöohje: eläinkorttien hallinta](KAYTTOOHJE.md)
+
 ## Image and video sources
 All images and videos are from Pixabay and used under the Pixabay Content License
 (https://pixabay.com/service/license-summary/).

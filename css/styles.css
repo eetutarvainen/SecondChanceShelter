@@ -1,30 +1,32 @@
 
+
+:root {
+  --green: #315b4c;
+  --green-dark: #244638;
+  --green-deep: #1a3328;
+  --green-soft: #e8f0eb;
+  --cream: #f8f8f4;
+  --accent: #d99b52;
+  --accent-light: #f0d3a8;
+  --accent-text: #8a5a22;
+  --ink: #292f2c;
+  --muted: #5d6a63;
+  --white: #ffffff;
+  --line: #dbe3dd;
+  --shadow: 0 12px 35px rgba(26, 51, 40, 0.1);
+  --max-width: 1160px;
+}
+
 /* =========================================
-   SECOND CHANCE SHELTER
-   Desktop-first responsive stylesheet
-   Breakpoints: 1280px and 768px
+1. YLEISET ASETUKSET
 ========================================= */
 
-
-/* =========================================
-   1. GLOBAL SETTINGS
-========================================= */
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-:root {
-  --primary-color: #315b4c;
-  --secondary-color: #e8f0eb;
-  --accent-color: #d99b52;
-  --background-color: #f8f8f4;
-  --text-color: #292f2c;
-  --white: #ffffff;
-  --border-color: #dddddd;
-  --max-width: 1200px;
 }
 
 html {
@@ -32,20 +34,24 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--background-color);
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--cream);
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--green);
+  text-underline-offset: 3px;
 }
 
 button,
@@ -55,181 +61,269 @@ select {
   font: inherit;
 }
 
+[hidden] {
+  display: none !important;
+}
+
+main {
+  flex: 1;
+  width: min(100% - 48px, var(--max-width));
+  margin: 0 auto;
+  padding: 54px 0 70px;
+}
+
+section {
+  margin-bottom: 66px;
+}
+
+section section {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: var(--green);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+/* Sivun pääosioiden otsikot */
+main > section > h2 {
+  text-align: center;
+}
+
+main > section > p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+main > section > ul,
+main > section > ol {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main > section > .buttons {
+  justify-content: center;
+}
 
 /* =========================================
-   2. ACCESSIBILITY
+2. SAAVUTETTAVUUS
 ========================================= */
 
 .skip-link {
   position: absolute;
   top: -100px;
-  left: 10px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 10px 15px;
+  left: 12px;
   z-index: 1000;
-  text-decoration: none;
+  padding: 10px 16px;
+  background: var(--green);
+  color: var(--white);
+  border-radius: 6px;
 }
 
 .skip-link:focus {
-  top: 10px;
+  top: 12px;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
 
 /* =========================================
-   3. HEADER AND NAVIGATION
+3. HEADER JA NAVIGAATIO
 ========================================= */
 
-header {
-  background-color: var(--primary-color);
+.site-header {
+  background: var(--green);
   color: var(--white);
-  padding: 25px 40px;
   text-align: center;
+  padding: 30px 24px 22px;
 }
 
-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 8px;
+.site-header h1 {
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
 }
 
-header p {
-  font-size: 1.05rem;
-}
-
-.site-nav {
-  background-color: #244638;
-  padding: 0 20px;
+.site-tagline {
+  color: #dcebe2;
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
 .site-nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
 }
 
 .site-nav a {
   display: block;
-  color: var(--white);
+  padding: 11px 18px;
+  border-radius: 30px;
+  color: #f2f8f4;
   text-decoration: none;
-  padding: 15px 18px;
+  font-size: 0.95rem;
   font-weight: bold;
-  transition: background-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .site-nav a:hover,
-.site-nav a:focus {
-  background-color: var(--primary-color);
+.site-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
 }
 
 .site-nav a.active {
-  background-color: var(--accent-color);
-  color: #222222;
-  border-radius: 4px;
+  background: var(--accent);
+  color: var(--green-deep);
 }
-
 
 /* =========================================
-   4. MAIN CONTENT
+4. ETUSIVUN ESITTELY
 ========================================= */
-
-main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 35px 30px;
-}
-
-section {
-  margin-bottom: 45px;
-}
-
-section h2 {
-  color: var(--primary-color);
-  font-size: 1.9rem;
-  margin-bottom: 18px;
-}
-
-section h3 {
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-section p {
-  margin-bottom: 15px;
-}
 
 .intro {
-  text-align: center;
-  max-width: 850px;
-  margin: 0 auto 45px;
+  display: grid;
+  grid-template-columns: 1.02fr 1fr;
+  align-items: center;
+  gap: 50px;
+  margin: 0;
+  text-align: left;
 }
 
-.intro h2 {
-  font-size: 2.3rem;
+.intro img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
 }
 
-.intro p {
-  font-size: 1.1rem;
+.intro-text p {
+  font-size: 1.08rem;
+  text-align: left;
+  max-width: 520px;
+  margin-left: 0;
+  margin-right: 0;
 }
-
 
 /* =========================================
-   5. BUTTONS AND LINKS
+5. PAINIKKEET
 ========================================= */
-
-.button,
-.btn,
-button {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--white);
-  border: none;
-  border-radius: 5px;
-  padding: 12px 22px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.button:hover,
-.btn:hover,
-button:hover {
-  background-color: #244638;
-}
-
-.button:focus,
-.btn:focus,
-button:focus {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 3px;
-}
 
 .buttons {
-  margin-top: 25px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  margin-bottom: 8px;
 }
 
+.btn,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 11px 23px;
+  border: 2px solid var(--green);
+  border-radius: 30px;
+  background: var(--green);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-2px);
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--white);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--green);
+}
+
+.btn.secondary:hover {
+  background: var(--green-soft);
+  border-color: var(--green);
+  color: var(--green-dark);
+}
 
 /* =========================================
-   6. GRID AND CARDS
+6. KORTIT JA RUUDUKKO
 ========================================= */
 
-.grid,
-.card-grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
+  gap: 24px;
 }
 
 .card {
-  background-color: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 6px 22px rgba(26, 51, 40, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
 }
 
 .card img {
@@ -239,140 +333,175 @@ button:focus {
 }
 
 .card-body {
-  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding: 23px 25px 26px;
 }
 
-.card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+.card-body p:last-child {
+  margin-bottom: 0;
 }
 
-.card p {
-  margin-bottom: 12px;
+.card-body .btn {
+  margin-top: auto;
 }
 
-.card ul {
-  padding-left: 20px;
-  margin-bottom: 15px;
+.card-body p {
+  text-align: left;
+  margin-left: 0;
 }
 
-
-/* =========================================
-   7. BADGES
-========================================= */
-
-.badge {
-  display: inline-block;
-  background-color: var(--accent-color);
-  color: #222222;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
+.meta {
+  color: var(--accent-text);
+  font-size: 0.92rem;
   font-weight: bold;
 }
 
+/* Työpaikkakortit */
+.card-body > ul {
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.card-body > ul li {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--green-soft);
+  color: var(--muted);
+}
+
+.card-body > ul li:last-child {
+  border-bottom: none;
+}
+
+.card-body > ul strong {
+  color: var(--green);
+}
 
 /* =========================================
-   8. JOB CARDS
-   IMPORTANT: Outside all media queries
+7. LUKUKORTIT
 ========================================= */
 
-.card:has(.badge) .badge {
-  position: static;
-  display: inline-block;
-  margin-bottom: 15px;
-}
-
-.card:has(.badge) .card-body {
-  padding-top: 18px;
-}
-
-.job-meta {
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-.job-meta p {
-  margin-bottom: 5px;
-}
-
-
-/* =========================================
-   9. STATISTICS
-========================================= */
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.stat {
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--green-soft);
   text-align: center;
 }
 
-.stat,
-.stat-card {
-  background-color: var(--secondary-color);
-  padding: 25px;
-  border-radius: 8px;
+.stat .number {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: 2.3rem;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
-.stat h3,
-.stat-card h3 {
-  font-size: 2rem;
-  color: var(--primary-color);
+.stat p {
+  margin: 0;
+  text-align: center;
 }
-
 
 /* =========================================
-   10. ANIMALS PAGE
+8. ELÄINSIVU
 ========================================= */
 
 .animal-jump-links {
-  display: flex;
   justify-content: center;
-  gap: 15px;
-  margin: 25px 0 35px;
+  margin: 28px 0 35px;
 }
 
 .animal-section {
   scroll-margin-top: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 }
 
-
 /* =========================================
-   11. VIDEO
+9. VIDEO
 ========================================= */
 
 video {
   display: block;
   width: 100%;
   max-width: 850px;
-  margin: 20px auto;
-  border-radius: 8px;
+  height: auto;
+  margin: 24px auto 0;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  background: #000;
 }
-
-.video-container {
-  max-width: 850px;
-  margin: 0 auto;
-}
-
 
 /* =========================================
-   12. LISTS
+10. DONAATIO
 ========================================= */
 
-section ul {
+.donation-card {
+  text-align: center;
+  border-top: 5px solid var(--accent);
+}
+
+.donation-card .card-body {
+  align-items: center;
+}
+
+.donation-card p {
+  text-align: center;
+}
+
+.amount {
+  color: var(--green);
+  font-family: Georgia, serif;
+  font-size: 2.6rem;
+}
+
+.list,
+main > section > ul.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.65em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+section ul,
+section ol {
   padding-left: 25px;
   margin-bottom: 20px;
+  color: var(--muted);
 }
 
 section li {
   margin-bottom: 8px;
 }
 
+section ol li::marker {
+  color: var(--green);
+  font-weight: bold;
+}
 
 /* =========================================
-   13. FORMS
+11. LOMAKKEET
 ========================================= */
 
 form {
@@ -380,23 +509,40 @@ form {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
 }
 
 label {
   display: block;
+  color: var(--green);
   font-weight: bold;
-  margin-bottom: 7px;
 }
 
 input,
 textarea,
 select {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  background-color: var(--white);
+  padding: 12px 14px;
+  border: 1px solid #c3d0c7;
+  border-radius: 10px;
+  background: #fcfdfb;
+  color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #77847d;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(49, 91, 76, 0.2);
 }
 
 textarea {
@@ -404,66 +550,112 @@ textarea {
   resize: vertical;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
+.form-note {
+  font-size: 0.9rem;
 }
 
 .send-button {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .form-status {
   margin-top: 15px;
+  color: var(--green);
   font-weight: bold;
 }
 
-
 /* =========================================
-   14. CONTACT PAGE
+12. YHTEYSTIEDOT-SIVU
 ========================================= */
 
 .contact-page {
   max-width: var(--max-width);
-  margin: 0 auto;
 }
 
 .contact-intro {
-  text-align: center;
   max-width: 800px;
-  margin: 0 auto 35px;
+  margin: 0 auto 38px;
+  text-align: center;
 }
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 35px;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.85fr);
+  gap: 28px;
   align-items: start;
+  margin-bottom: 55px;
 }
 
 .contact-form-section,
 .contact-details {
-  background-color: var(--white);
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(26, 51, 40, 0.06);
+}
+
+.contact-form-section h2,
+.contact-details h2 {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+/* yhteystietokortti */
+.contact-details {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+
+.contact-details h2 {
+  color: var(--white);
 }
 
 .contact-details p {
-  margin-bottom: 15px;
+  color: #e2eee7;
+  text-align: left;
+  max-width: none;
 }
 
-.map-section {
-  margin-top: 40px;
+.contact-details strong {
+  color: var(--accent-light);
+}
+
+.contact-details a {
+  color: var(--white);
+  text-decoration-thickness: 1px;
+}
+
+#found-animal {
+  padding: 28px 30px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 14px;
+  background: var(--green-soft);
+  scroll-margin-top: 25px;
+}
+
+#found-animal h2 {
+  text-align: left;
+}
+
+#found-animal ol {
+  max-width: none;
+  margin-bottom: 0;
+}
+
+.map-section h2 {
+  text-align: center;
 }
 
 .map-container {
   width: 100%;
   height: 400px;
   overflow: hidden;
-  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
 }
 
 .map-container iframe {
@@ -472,130 +664,147 @@ select:focus {
   border: 0;
 }
 
-
 /* =========================================
-   15. FOOTER
+13. TIETOSUOJA
 ========================================= */
 
-footer {
-  background-color: #244638;
+.info-page {
+  max-width: 900px;
+}
+
+.info-page main > section > h2,
+.info-page section > h2,
+.info-page section > p {
+  text-align: left;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.info-page section > ul {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.info-intro {
+  padding: 26px 30px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--green);
+  border-radius: 14px;
+  background: var(--green-soft);
+}
+
+.info-page section[id] {
+  scroll-margin-top: 25px;
+}
+
+.info-page h3 {
+  margin-top: 26px;
+  font-size: 1.15rem;
+}
+
+/* =========================================
+14. FOOTERI SINNE ALAS
+========================================= */
+
+.site-footer {
+  margin-top: auto;
+  padding: 40px 24px 30px;
+  background: var(--green-deep);
   color: var(--white);
   text-align: center;
-  padding: 25px;
-  margin-top: 40px;
 }
 
-footer p {
-  margin-bottom: 5px;
+.site-footer p {
+  margin-bottom: 6px;
+  color: #cfe0d6;
+  font-size: 0.94rem;
 }
 
-footer a {
+.site-footer strong {
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.site-footer a {
   color: var(--white);
 }
 
-footer a:focus {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 3px;
+.site-footer a:hover {
+  color: var(--accent-light);
 }
 
+.site-footer p:last-child {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: #a9bfb2;
+  font-size: 0.82rem;
+}
 
 /* =========================================
-   16. TABLET RESPONSIVENESS
-   Screens up to 1280px
+15. jos toimis tabletilla nyt
 ========================================= */
 
-@media (max-width: 1280px) {
+@media (max-width: 900px) {
 
-  main {
-    padding: 30px 25px;
+  .site-header {
+    padding: 24px 18px 18px;
   }
 
-  .grid,
-  .card-grid {
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .intro-text p {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .intro .buttons {
+    justify-content: center;
+  }
+
+  .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-layout {
-    grid-template-columns: 1.2fr 1fr;
-    gap: 25px;
-  }
-
-  header {
-    padding: 22px 25px;
-  }
-
-  .site-nav a {
-    padding: 13px 14px;
+    grid-template-columns: 1fr;
   }
 }
 
-
 /* =========================================
-   17. MOBILE RESPONSIVENESS
-   Screens up to 768px
+16. JOS TOIMIS KÄNNYKÄLLÄ
 ========================================= */
 
-@media (max-width: 768px) {
-
-  body {
-    font-size: 15px;
-  }
-
-  header {
-    padding: 20px 15px;
-  }
-
-  header h1 {
-    font-size: 1.7rem;
-  }
-
-  header p {
-    font-size: 0.95rem;
-  }
-
-  .site-nav {
-    padding: 5px 10px;
-  }
-
-  .site-nav ul {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .site-nav li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .site-nav a {
-    padding: 11px;
-    width: 100%;
-  }
+@media (max-width: 600px) {
 
   main {
-    padding: 25px 15px;
+    width: min(100% - 32px, var(--max-width));
+    padding: 35px 0 45px;
   }
 
   section {
-    margin-bottom: 35px;
+    margin-bottom: 48px;
   }
 
-  section h2 {
-    font-size: 1.6rem;
+  .site-nav ul {
+    gap: 3px;
   }
 
-  .intro h2 {
-    font-size: 1.8rem;
+  .site-nav a {
+    padding: 9px 13px;
+    font-size: 0.9rem;
   }
 
-  .intro p {
-    font-size: 1rem;
-  }
-
-  .grid,
-  .card-grid {
+  .grid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .card img {
@@ -603,45 +812,34 @@ footer a:focus {
   }
 
   .card-body {
-    padding: 18px;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    padding: 20px;
   }
 
   .animal-jump-links {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
-  }
-
-  .animal-jump-links a {
-    text-align: center;
-  }
-
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .contact-form-section,
   .contact-details {
-    padding: 18px;
+    padding: 22px 18px;
+  }
+
+  #found-animal,
+  .info-intro {
+    padding: 22px 18px;
   }
 
   .map-container {
     height: 280px;
   }
 
-  .button,
   .btn,
   button {
-    text-align: center;
+    width: 100%;
   }
 
-  footer {
-    padding: 20px 15px;
+  .site-footer {
+    padding: 32px 16px 24px;
   }
 }

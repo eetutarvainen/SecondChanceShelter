@@ -19,11 +19,9 @@ administration panel or database.
 
 ## Before you begin
 
-1. Make a backup of the project or ensure that the changes can be restored
-   using Git version control.
-2. Open the HTML file you want to edit in a text editor, such as Visual
-   Studio Code.
-3. Find the content you want to edit by searching for its heading or text.
+1. Make a backup of the project or ensure that the changes can be restored using Git version control or using other suitable method.
+2. Open the HTML file you want to edit in a text editor, such as Visual Studio Code.
+3. Find the content you want to edit by searching for its heading or by text.
    Headings usually use `h2` or `h3` elements and paragraphs use `p` elements.
 4. Edit only the content you want to change. Keep the surrounding HTML tags,
    `class` and `id` attributes, and link structures intact.

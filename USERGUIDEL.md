@@ -103,13 +103,15 @@ details, a description and a contact link:
     <p class="meta">Labrador Retriever · 4 years · male</p>
     <p>A friendly and playful dog who enjoys long walks.</p>
     <a class="btn" href="contact.html">Ask about adoption</a>
+    <a class="res" href="contact.html">Reserved</a>
   </div>
 </article>
 ```
 
 Place dog cards in the section with `id="dogs"` and cat cards in the section
 with `id="cats"`. Do not remove the `class` attributes because the CSS uses
-them to create the card layout.
+them to create the card layout. The `Reserved` link is optional and can be
+shown on an animal card when the animal has already been reserved.
 
 ### Adding an animal card
 
@@ -121,6 +123,14 @@ them to create the card layout.
    dog or the `id="cats"` section for a cat.
 4. Change the `src`, `alt`, name, basic details and description.
 5. Check that the contact link points to `contact.html`.
+6. If the animal is reserved, add a separate link with `class="res"` and the
+   text `Reserved`:
+
+   ```html
+   <a class="res" href="contact.html">Reserved</a>
+   ```
+
+   If the animal is available, leave this link out.
 
 ### Editing an animal card
 
@@ -131,6 +141,17 @@ them to create the card layout.
    folder and that `src` matches the filename exactly.
 4. Do not change the card classes (`card`, `card-body` and `meta`) without
    a valid reason.
+5. To mark an animal as reserved, add the `Reserved` link after the regular
+   adoption link. Keep `class="res"` so that the button uses the reserved
+   style.
+6. To remove the reserved marking, delete the complete link block:
+
+   ```html
+   <a class="res" href="contact.html">Reserved</a>
+   ```
+
+   After removal, the animal card will display only the regular adoption
+   button.
 
 ### Removing an animal card
 

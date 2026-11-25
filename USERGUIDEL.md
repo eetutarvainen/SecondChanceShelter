@@ -102,8 +102,8 @@ details, a description and a contact link:
     <h3>Example</h3>
     <p class="meta">Labrador Retriever · 4 years · male</p>
     <p>A friendly and playful dog who enjoys long walks.</p>
-    <a class="btn" href="contact.html">Ask about adoption</a>
-    <a class="res" href="contact.html">Reserved</a>
+    <!-- <a class="btn" href="adoption.html#contactForm">Ask about adoption</a> -->
+    <a class="res" href="adoption.html">Reserved</a>
   </div>
 </article>
 ```
@@ -122,7 +122,7 @@ shown on an animal card when the animal has already been reserved.
 3. Paste the copy into the correct section: the `id="dogs"` section for a
    dog or the `id="cats"` section for a cat.
 4. Change the `src`, `alt`, name, basic details and description.
-5. Check that the contact link points to `contact.html`.
+5. Check that the adoption link points to `adoption.html#contactForm`.
 6. If the animal is reserved, add a separate link with `class="res"` and the
    text `Reserved`:
 

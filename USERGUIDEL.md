@@ -102,7 +102,7 @@ details, a description and a contact link:
     <h3>Example</h3>
     <p class="meta">Labrador Retriever · 4 years · male</p>
     <p>A friendly and playful dog who enjoys long walks.</p>
-    <!-- <a class="btn" href="adoption.html#contactForm">Apply adoption</a> -->
+    <!-- <a class="btn" href="adoption.html#contactForm">Apply to adoption</a> -->
     <a class="res" href="adoption.html">Reserved</a>
   </div>
 </article>

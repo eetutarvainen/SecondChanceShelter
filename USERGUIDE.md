@@ -102,16 +102,15 @@ details, a description and a contact link:
     <h3>Example</h3>
     <p class="meta">Labrador Retriever · 4 years · male</p>
     <p>A friendly and playful dog who enjoys long walks.</p>
-    <!-- <a class="btn" href="adoption.html#contactForm">Apply to adoption</a> -->
-    <a class="res" href="adoption.html">Reserved</a>
+    <a class="btn" href="adoption.html#contactForm">Apply to adopt Example</a>
   </div>
 </article>
 ```
 
 Place dog cards in the section with `id="dogs"` and cat cards in the section
 with `id="cats"`. Do not remove the `class` attributes because the CSS uses
-them to create the card layout. The `Reserved` link is optional and can be
-shown on an animal card when the animal has already been reserved.
+them to create the card layout. When an animal is reserved, the Apply link is replaced with a
+`Reserved` label (see "Editing an animal card").
 
 ### Adding an animal card
 
@@ -122,15 +121,10 @@ shown on an animal card when the animal has already been reserved.
 3. Paste the copy into the correct section: the `id="dogs"` section for a
    dog or the `id="cats"` section for a cat.
 4. Change the `src`, `alt`, name, basic details and description.
-5. Check that the adoption link points to `adoption.html#contactForm`.
-6. If the animal is reserved, add a separate link with `class="res"` and the
-   text `Reserved`:
-
-   ```html
-   <a class="res" href="contact.html">Reserved</a>
-   ```
-
-   If the animal is available, leave this link out.
+5. Change the Apply link text to the new animal's name, for example
+   `Apply to adopt Essi`, and check that it points to `adoption.html#contactForm`.
+6. If the animal is already reserved, use the `Reserved` label instead of
+   the Apply link (see "Editing an animal card").
 
 ### Editing an animal card
 
@@ -141,13 +135,17 @@ shown on an animal card when the animal has already been reserved.
    folder and that `src` matches the filename exactly.
 4. Do not change the card classes (`card`, `card-body` and `meta`) without
    a valid reason.
-5. To mark an animal as reserved, add the `Reserved` link after the regular
-   adoption link. Keep `class="res"` so that the button uses the reserved
-   style.
-6. To remove the reserved marking, delete the complete link block:
+5. To mark an animal as reserved, replace the Apply link with this label:
 
    ```html
-   <a class="res" href="contact.html">Reserved</a>
+   <span class="res">Reserved</span>
+   ```
+
+   Keep `class="res"` so that the label uses the reserved style.
+6. To remove the reserved marking, replace the label with the Apply link again:
+
+   ```html
+   <a class="btn" href="adoption.html#contactForm">Apply to adopt Example</a>
    ```
 
    After removal, the animal card will display only the regular adoption
@@ -213,3 +211,14 @@ functionality is intended to change.
 Changes become visible on the published website only after the modified HTML
 files, images and other files have been published using the project's
 publishing method, such as GitHub Pages.
+
+## Publishing changes to GitHub Pages
+
+1. Check your changes locally in a browser and review them with `git diff`.
+2. Save the changes in Git:
+   `git add .` and `git commit -m "Short description of the change"`
+3. Upload the changes to GitHub: `git push origin main`
+4. GitHub Pages publishes the `main` branch automatically. Wait a few
+   minutes and open https://eetutarvainen.github.io/SecondChanceShelter/
+5. Check the changed pages on the published site. If an old version is
+   shown, reload the page with Ctrl + F5.

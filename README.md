@@ -6,7 +6,7 @@ Published site: https://eetutarvainen.github.io/SecondChanceShelter/
 
 ## Documentation
 
-- [Usermanual: USERGUIDE.md)
+- [User guide: managing website content](USERGUIDEL.md)
 
 ## Image and video sources
 All images and videos are from Pixabay and used under the Pixabay Content License
@@ -21,5 +21,5 @@ All images and videos are from Pixabay and used under the Pixabay Content Licens
 | images/pentti.jpg | Alexas_Fotos | https://pixabay.com/fi/photos/chihuahua-papillon-koira-pörröinen-7328301/ |
 | images/luna.jpg | pasja1000 | https://pixabay.com/fi/photos/tomcat-metsästys-hiukset-viikset-3721860/ |
 | images/milla.jpg | Dimhou | https://pixabay.com/fi/photos/kissa-kukka-kissanpentu-kivi-2536662/ |
-| media/dogs.mp4 | FuriousPhoenixAU | https://pixabay.com/fi/videos/koira-musta-labradorinnoutaja-30518/ |
+| media/Esittely.mp4 | FuriousPhoenixAU | https://pixabay.com/fi/videos/koira-musta-labradorinnoutaja-30518/ |
 
